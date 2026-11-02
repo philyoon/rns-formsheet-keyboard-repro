@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<Routes>();
 function Home({ navigation }: NativeStackScreenProps<Routes, 'Home'>) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button testID="open-sheet" title="Open sheet" onPress={() => navigation.navigate('Sheet')} />
+      <Button title="Open sheet" onPress={() => navigation.navigate('Sheet')} />
     </View>
   );
 }
@@ -27,7 +27,7 @@ function Sheet() {
   const rows = text.length === 0 ? 12 : 2;
   return (
     <View style={{ backgroundColor: 'white' }}>
-      <TextInput testID="input" value={text} onChangeText={setText} placeholder="Type here" />
+      <TextInput value={text} onChangeText={setText} placeholder="Type here" />
       {Array.from({ length: rows }, (_, i) => (
         <Text key={i} style={{ height: 48 }}>
           Row {i}
